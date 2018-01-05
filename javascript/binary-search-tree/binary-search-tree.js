@@ -39,12 +39,16 @@ class BinarySearchTree {
         }
     }
 
-    traverse() {
-        return [
-            ...(this.left ? this.left.traverse() : []),
-            this.val,
-            ...(this.right ? this.right.traverse() : []),
-        ];
+    traverse(func) {
+        if (this.left) {
+            this.left.traverse(func);
+        }
+
+        func(this.val);
+
+        if (this.right) {
+            this.right.traverse(func)
+        }
     }
 }
 

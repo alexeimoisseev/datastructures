@@ -9,7 +9,7 @@ test('BinarySearchTree can insert', () => {
 
 test('BinarySearchTree can find existing', () => {
     const three = root.find(3);
-    expect(three).not.toBe(null);
+    expect(three.val).toBe(3);
 
 });
 
@@ -25,7 +25,11 @@ test('BinarySearchTree can traverse', () => {
         .insert(4)
         .insert(3)
         .insert(6);
-    const arr = oneToSix.traverse();
+
+    const arr = [];
+    oneToSix.traverse((val) => {
+        arr.push(val);
+    });
 
     expect(arr).toEqual([1, 2, 3, 4, 5, 6]);
 });
