@@ -8,7 +8,6 @@ type BinarySearchTree struct {
     Right *BinarySearchTree
 }
 
-
 func (T *BinarySearchTree) Insert(val string) {
     if (val < T.Val) {
         if (T.Left != nil) {
